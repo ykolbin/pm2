@@ -298,7 +298,7 @@ commander.command('start [name|file|ecosystem|id...]')
       async.forEachLimit(cmd, 1, function(script, next) {
         pm2.start(script, commander, next);
       }, function(err) {
-        pm2.speedList(err ? 1 : 0);
+        pm2.listAndAttach(err ? 1 : 0);
       });
     }
   });
